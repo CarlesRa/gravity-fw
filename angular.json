@@ -31,9 +31,10 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss",
               "src/app/extensions/assets/extensions.scss",
-              "src/app/ui-library/ui-library.scss"
+              "src/app/ui-library/assets/ui-library.scss"
             ],
             "scripts": []
           },
