@@ -31,7 +31,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/extensions/assets/extensions.scss",
+              "src/app/ui-library/ui-library.scss"
             ],
             "scripts": []
           },

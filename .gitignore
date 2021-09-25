@@ -43,3 +43,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Modules
+/src/app/extensions
+/src/app/extensions/*
+/src/app/ui-library
+/src/app/ui-library/*
