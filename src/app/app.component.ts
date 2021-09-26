@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, HostListener, ViewChild} from '@angular/core';
+import {MatSidenav} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'gravity-fw';
+  @ViewChild('sidenav') sideNav!: MatSidenav;
+  windowWidth!: number;
+
+  constructor() {
+    this.windowWidth = window.innerWidth;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (event.target.innerWidth < 850) {
+      this.sideNav.close().then();
+    } else {
+      this.sideNav.open().then();
+    }
+  }
 }
