@@ -1,5 +1,6 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="d-flex justify-content-between">
   <mat-icon role="button" (click)="sidenav.toggle()">menu</mat-icon>
+  <span>{{ currentDate | date:'dd/MM/y hh:mm:ss'}}</span>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" opened>

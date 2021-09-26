@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, HostListener, ViewChild} from '@angular/core';
 import {MatSidenav} from "@angular/material/sidenav";
+import {interval} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,12 @@ import {MatSidenav} from "@angular/material/sidenav";
 })
 export class AppComponent {
   @ViewChild('sidenav') sideNav!: MatSidenav;
-  windowWidth!: number;
+  currentDate!: Date;
 
   constructor() {
-    this.windowWidth = window.innerWidth;
+    setInterval(() => {
+      this.currentDate = new Date();
+    }, 1)
   }
 
   @HostListener('window:resize', ['$event'])
