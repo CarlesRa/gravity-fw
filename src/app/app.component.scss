@@ -14,3 +14,7 @@ mat-sidenav {
 .btn-margin-left {
   margin-left: 10px;
 }
+
+.menu-item:not(:first-child) {
+  margin-top: 15px;
+}

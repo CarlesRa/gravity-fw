@@ -10,18 +10,12 @@
     </div>
     <div class="sideNav-container fs-5 p-3">
       <div class="grid">
-        <div class="row">
+        <div class="row menu-item" *ngFor="let item of loop">
           <div role="button" class="col d-flex justify-content-start align-items-center ml-2 mb-3">
             <mat-icon>home</mat-icon>
             <span class="btn-margin-left">Home</span>
           </div>
           <mat-divider></mat-divider>
-        </div>
-        <div class="row">
-          <div role="button" class="col d-flex justify-content-start align-items-center ml-2 mt-2">
-            <mat-icon>home</mat-icon>
-            <span class="btn-margin-left">Home</span>
-          </div>
         </div>
       </div>
     </div>

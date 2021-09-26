@@ -10,6 +10,7 @@ import {interval} from "rxjs";
 export class AppComponent {
   @ViewChild('sidenav') sideNav!: MatSidenav;
   currentDate!: Date;
+  loop = ['', '', '', '', '', '', '', '', '', '', ]
 
   constructor() {
     setInterval(() => {
