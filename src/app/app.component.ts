@@ -1,6 +1,5 @@
-import {AfterViewInit, Component, HostListener, ViewChild} from '@angular/core';
+import { Component, HostListener, ViewChild} from '@angular/core';
 import {MatSidenav} from "@angular/material/sidenav";
-import {interval} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,8 @@ import {interval} from "rxjs";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  auth: boolean = false;
+
   @ViewChild('sidenav') sideNav!: MatSidenav;
   currentDate!: Date;
   loop = ['', '', '', '', '', '', '', '', '', '', ]
