@@ -11,7 +11,7 @@ export class AppComponent {
 
   @ViewChild('sidenav') sideNav!: MatSidenav;
   currentDate!: Date;
-  loop = ['', '', '', '', '', '', '', '', '', '', ]
+  loop = []; /*['', '', '', '', '', '', '', '', '', '', ]*/
 
   constructor() {
     setInterval(() => {

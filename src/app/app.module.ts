@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {ExtensionsModule} from "./extensions/extensions.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from "./gravity-fw-core/material.module";
+import {UiLibraryModule} from "./ui-library/ui-library.module";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {MaterialModule} from "./gravity-fw-core/material.module";
     ExtensionsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    UiLibraryModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,23 +1,27 @@
-<ng-container *ngIf="!auth">
+<ng-container>
   <mat-toolbar color="primary" class="d-flex justify-content-between">
-    <mat-icon role="button" (click)="sidenav.toggle()">menu</mat-icon>
+    <ng-container *ngIf="loop.length > 0 else login">
+      <mat-icon role="button" (click)="sidenav.toggle()">menu</mat-icon>
+    </ng-container>
     <span>{{ currentDate | date:'dd/MM/y HH:mm:ss'}}</span>
   </mat-toolbar>
   <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened>
+    <mat-sidenav #sidenav mode="side" [opened]="loop.length > 0 ? true : false" >
       <div class="d-flex justify-content-between p-3 border-bottom fs-3">
         <span>Gravity-fw</span>
         <mat-icon role="button" (click)="sidenav.close()">close</mat-icon>
       </div>
       <div class="sideNav-container fs-5 p-3">
         <div class="grid">
-          <div class="row menu-item" *ngFor="let item of loop">
-            <div role="button" class="col d-flex justify-content-start align-items-center ml-2 mb-3">
-              <mat-icon>home</mat-icon>
-              <span class="btn-margin-left">Home</span>
+          <ng-container *ngIf="loop.length > 0 else menuNotImplemented">
+            <div class="row menu-item" *ngFor="let item of loop">
+              <div role="button" class="col d-flex justify-content-start align-items-center ml-2 mb-3">
+                <mat-icon>home</mat-icon>
+                <span class="btn-margin-left">Home</span>
+              </div>
+              <mat-divider></mat-divider>
             </div>
-            <mat-divider></mat-divider>
-          </div>
+          </ng-container>
         </div>
       </div>
     </mat-sidenav>
@@ -26,6 +30,14 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 </ng-container>
+
+<ng-template #login>
+  <span>Login</span>
+</ng-template>
+
+<ng-template #menuNotImplemented>
+  <gy-notification-panel [mode]="'info'" [text]="'Side menu not implemented'"></gy-notification-panel>
+</ng-template>
 
 
 
